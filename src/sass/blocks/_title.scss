@@ -4,6 +4,7 @@
     line-height: 30px;
     text-align: center;
     color: #0D0D0D;
+    text-transform: uppercase;
     &_left{
         font-weight: bold;
         font-size: 36px;
@@ -11,5 +12,14 @@
         text-transform: uppercase;
         text-align: left;
         color: #FFFFFF;
+    }
+    &_small{
+        font-weight: 400;
+        line-height: 45px;
+        font-size: 30px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #0D0D0D;
+        margin: 0;
     }
 }
