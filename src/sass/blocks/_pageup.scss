@@ -1,0 +1,14 @@
+.pageup{
+    display: none;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 40px;
+    height: 40px;  
+    background-color: $main-color;
+    mask-image: url('../../icons/up.svg');
+    text-decoration: none;
+    img{
+        width: 100%;
+    }
+}

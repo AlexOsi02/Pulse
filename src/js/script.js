@@ -1,8 +1,18 @@
 $(document).ready(function(){
     $('.carousel__inner').slick({
         speed: 1200,
+        adaptiveHeight: true,
         prevArrow: '<button type="button" class="slick-prev"><img src=../icons/left.svg></button>',
-        nextArrow: '<button type="button" class="slick-next"><img src=../icons/right.svg></button>'
+        nextArrow: '<button type="button" class="slick-next"><img src=../icons/right.svg></button>',
+        responsive: [
+            {
+              breakpoint: 992,
+              settings: {
+                dots: true,
+                arrows: false,
+              }
+            },
+        ]
     });
 
     $('ul.catalog__tabs').on('click', 'li:not(catalog__tab_active)', function() {
@@ -38,7 +48,89 @@ $(document).ready(function(){
         $('.overlay, #order').fadeIn();
     });
   });
+
+  //Validate 
+  function validateForms(form){
+    $(form).validate({
+        rules: {
+            name: "required",
+            phone: "required",
+            email:{
+                required: true,
+                email: true
+            }
+        },
+        messages: {
+            name: "Пожалуйста, введите своё имя",
+            phone: "Пожалуйста, введите свой номер телефона",
+            email:{
+                required: "Пожалуйста, введите свой адреc почты",
+                email: "Пожалуйста, введите корректный адреc почты"
+            } 
+        }
+    });
+  };
+
+  validateForms('#consultation-form');
+  validateForms('#consultation form');
+  validateForms('#order form');
+
+  $('input[name=phone]').mask("+7 (999) 999-99-99");
+
+$.fn.setCursorPosition = function(pos) {
+if ($(this).get(0).setSelectionRange) {
+    $(this).get(0).setSelectionRange(pos, pos);
+} else if ($(this).get(0).createTextRange) {
+    var range = $(this).get(0).createTextRange();
+    range.collapse(true);
+    range.moveEnd('character', pos);
+    range.moveStart('character', pos);
+    range.select();
+}
+};
+  $('input[name=phone]').on('click', function(){
+    $(this).setCursorPosition(3);
+});
+
+$('form').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+        type: 'POST',
+        url: "mailer/smart.php",
+        data: $(this).serialize()
+    }).done(function(){
+        $(this).find("input").val("");
+        $('#consultation, #order').fadeOut();
+        $('.overlay, #thanks').fadeIn('slow');
+        $('form').trigger('reset');
+    });
+    return false;
+});
+
+//Smooth scroll and pageup
+
+$(window).scroll(function() {
+    if($(this).scrollTop() > 1600){
+        $('.pageup').fadeIn();
+    } else {
+        $('.pageup').fadeOut();
+    }
+});
+
+$("a[href^='#']").click(function(){
+    const _href = $(this).attr("href");
+    $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+    return false;
+});
+
+wow = new WOW(
+    {
+    animateClass: 'animate__animated', // default
+  }
+  )
+  wow.init();
   });
+
 
 
 

@@ -7,11 +7,12 @@
     <title>Pulse</title>
     <link rel="stylesheet" href="css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" type="text/css" href="css/slick.css"/>
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
-    <section class="promo">
+    <section id="up" class="promo">
         <div class="container">
             <header class="header">
                 <a href="#" class="header__logo">
@@ -53,17 +54,17 @@
             <h2 class="title">НАШИ ПРЕИМУЩЕСТВА</h2>
             <div class="advantages__wrapper">
                 <div class="advantages__item">
-                    <img src="icons/advantages/cup.png" alt="cup" class="__advantages__img">
+                    <img src="icons/advantages/cup.png" alt="cup" class="advantages__img">
                     <div class="advantages__subtitle">Делимся опытом</div>
                     <div class="advantages__descr">Наши сотрудники всегда готовы поделиться своим опытом, так как сами бегают полумарафоны, переплыли Босфор, готовятся к соревнованиям по триатлону!</div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/advantages/heart.png" alt="heart" class="__advantages__img">
+                    <img src="icons/advantages/heart.png" alt="heart" class="advantages__img advantages__img_animated">
                     <div class="advantages__subtitle">Заботимся о здоровье</div>
                     <div class="advantages__descr">Мы работаем для того, чтобы Ваши занятия спортом шли на пользу Вашему здоровью и были в радость Вам и Вашим близким!</div>
                 </div>
                 <div class="advantages__item">
-                    <img src="icons/advantages/shoe.png" alt="shoe" class="__advantages__img">
+                    <img src="icons/advantages/shoe.png" alt="shoe" class="advantages__img">
                     <div class="advantages__subtitle">Учим бегать</div>
                     <div class="advantages__descr">Помогаем с обучением правильной технике бега! Дружим с крупнейшей школой бега в России - <a href="#">I LOVE RUNNING.</a></div>
                 </div>
@@ -74,9 +75,9 @@
         <div class="container">
             <div class="title title_left">Получите бесплатную консультацию по подбору пульсометра </div>
             <div class="consultation__descr">Просто заполните форму заявки <br> и мы перезвоним вам в течении 10 минут</div>
-            <form class="feed-form" action="#">
+            <form id="consultation-form" class="feed-form" action="#">
                 <input name="name" required type="text" placeholder="Ваше имя" type="text">
-                <input name="phone" required type="text" placeholder="Ваш телефон" type="number">
+                <input name="phone" required placeholder="Ваш телефон">
                 <input name="email" required type="text" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
@@ -347,7 +348,7 @@
     <section class="reviews">
         <div class="container">
             <div class="title">отзывы клиентов</div>
-            <div class="reviews-item">
+            <div class="reviews-item animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.2s">
                 <div class="reviews-item__img"><img src="img/reviews/review-1.png" alt="avatar"></img></div>
                 <div class="reviews-item__wrapper">
                     <div class="reviews-item__title">Ирина Иванченко</div>
@@ -356,7 +357,7 @@
                       <br> <br> Спасибо, RunSmart! </div>
                 </div>
             </div>
-            <div class="reviews-item">
+            <div class="reviews-item animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.4s">
                 <div class="reviews-item__img"><img src="img/reviews/review-2.png" alt="avatar"></img></div>
                 <div class="reviews-item__wrapper">
                     <div class="reviews-item__title">Иван Сёмочкин</div>
@@ -364,7 +365,7 @@
                     <div class="reviews-item__review">Крутая штука-пульсометр. Обычно без них бегал. Оказывается только хуже себе делал. <br> Купил пульсометр, ещё в подарок получил тренировку. Со мной вместе провели первую тренировку, научили пользоваться новым гаджетом. Также объяснили основы анатомии, составили план тренировок на месяц вперёд.<br><br>С ними подготовился к своему первому полумарафону! Спасибо!!!</div>
                 </div>
             </div>
-            <div class="reviews-item">
+            <div class="reviews-item animate__fadeInUp wow" data-wow-duration="1.5s" data-wow-delay="0.5s">
                 <div class="reviews-item__img"><img src="img/reviews/review-3.png" alt="avatar"></img></div>
                 <div class="reviews-item__wrapper">
                     <div class="reviews-item__title">Юлия Дашкина</div>
@@ -393,9 +394,9 @@
             <div class="modal__subtitle">Просто заполните форму заявки</div>
             <div class="modal__descr">и мы перезвоним вам в течении 10 минут</div>
             <form class="feed-form" action="#">
-                <input name="name" required type="text" placeholder="Ваше имя" type="text">
-                <input name="phone" required type="text" placeholder="Ваш телефон" type="number">
-                <input name="email" required type="text" placeholder="Ваш E-mail" type="email">
+                <input name="name" type="text" placeholder="Ваше имя" type="text">
+                <input name="phone" type="text" placeholder="Ваш телефон" type="number">
+                <input name="email" type="text" placeholder="Ваш E-mail" type="email">
                 <button class="button button_submit">заказать кОНСУЛЬТАЦИЮ</button>
             </form>
         </div>
@@ -416,9 +417,12 @@
             <div class="modal__descr">Наш менеджер свяжется с вами в ближайшее время!</div>
         </div>
     </div>
+    <a href="#up" class="pageup"><img></a>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/slick.min.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+    <script src="js/wow.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 </body>
