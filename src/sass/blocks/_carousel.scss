@@ -14,10 +14,11 @@
     }
     .slick-dots{
         width: 150px;
-        padding: 0;
-        margin: 0;
+        //padding: 0;
+        //margin: 0;
         display: flex;
         margin: 0 auto;
+        margin-top: 15px;
         justify-content: space-between;
         align-items: center;
         li{

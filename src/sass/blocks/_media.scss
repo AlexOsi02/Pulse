@@ -43,6 +43,9 @@
             width: 43px;
             height: 43px;
         }
+        &__map{
+            height: 450px;
+        }
     }
     .title{
         &_left{
@@ -126,7 +129,12 @@
                 font-size: 15px;
             }
         }
+        &__content{
+            margin-top: 25px;
+        }
         &-item{
+            margin: 0 auto;
+            margin-top: 5px;
             width: 255px;
             &__descr{
                 font-size: 12px;
@@ -146,6 +154,11 @@
             img{
                 width: 100px;
             }
+        }
+    }
+    .footer{
+        &__map{
+            height: 400px;
         }
     }
     .title{
@@ -248,6 +261,7 @@
         }
     }
     .catalog{
+
         &__tabs{
             //justify-content: space-between;
             margin-top: 25px;
@@ -260,6 +274,31 @@
             }
         }
 
+    }
+    .reviews-item{
+        display: block;
+        margin-top: 30px;
+        &__img{
+            margin: 30px 0;
+            height: 100%;
+
+            img{
+                display: block;
+                margin: 0 auto;
+            }
+        }
+        &__title{
+            text-align: center;
+            font-size: 16px;
+        }
+        &__subtitle{
+            text-align: center;
+            font-size: 14px;
+        }
+        &__review{
+            font-size: 12px;
+            padding: 0 15px;
+        }
     }
     .button{
         &_main{
@@ -282,7 +321,60 @@
             text-align: center;
         }
         &_small{
-            font-size: 28px;
+            font-size: 25px;
+        }
+    }
+    .footer{
+        &__info{
+            right: 0;
+            width: 180px;
+            padding: 7px;
+            height: 120px;
+            left: 100%;
+            transform: translateX(-100%);
+        }
+        &__address{
+            margin-bottom: 3px;
+            font-size: 12px;
+        }
+        &__phone{
+            font-size: 12px;
+        }
+        &__social{
+            margin-top: 8px;
+            &-item{
+                width: 30px;
+                height: 30px;
+                img{
+                    height: 14px;
+                }
+            }
+        }
+        &__map{
+            height: 400px;
+        }
+    }
+    .pageup{
+        bottom: 15px;
+        right: 15px;
+    }
+    .modal{
+        width: 280px;
+        padding: 20px 15px 20px 15px;
+        .feed-form{
+            input{
+                width: 250px;
+            }
+        }
+        &__close{
+            top: -4px;
+            right: 3px;
+            font-size: 24px;
+        }
+        .button{
+            &_submit{
+                width: 250px;
+            }
         }
     }
 }
