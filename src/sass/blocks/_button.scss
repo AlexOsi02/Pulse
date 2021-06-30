@@ -34,7 +34,9 @@
         font-size: 14px;
         line-height: 22px;
     }
+    transition: 0.3s all;
     &:hover{
-        background: red;
+        //background: red;
+        box-shadow: 2px 2px 15px $main-color;
     }
 }

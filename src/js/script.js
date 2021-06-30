@@ -53,7 +53,10 @@ $(document).ready(function(){
   function validateForms(form){
     $(form).validate({
         rules: {
-            name: "required",
+            name:{
+                required: true,
+                minlength: 2,
+            } ,
             phone: "required",
             email:{
                 required: true,
@@ -61,7 +64,11 @@ $(document).ready(function(){
             }
         },
         messages: {
-            name: "Пожалуйста, введите своё имя",
+            name: 
+            {
+                required: "Пожалуйста, введите своё имя",
+                minlength: jQuery.validator.format("Введите {0} символа!"),
+            },
             phone: "Пожалуйста, введите свой номер телефона",
             email:{
                 required: "Пожалуйста, введите свой адреc почты",
@@ -102,6 +109,7 @@ $('form').submit(function(e){
         $(this).find("input").val("");
         $('#consultation, #order').fadeOut();
         $('.overlay, #thanks').fadeIn('slow');
+        
         $('form').trigger('reset');
     });
     return false;
